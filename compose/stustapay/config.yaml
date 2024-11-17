@@ -1,0 +1,28 @@
+database:
+  host: "database"
+  user: "stustapay"
+  password: "stustapay"
+  dbname: "stustapay"
+
+core:
+  test_mode: false
+  secret_key: "yourtokenhere"
+
+administration:
+  base_url: "https://admin.event.domain/api"
+  host: "administration-api"
+  port: 8081
+
+customerportal:
+  base_url: "https://customer.event.domain/api"
+  host: "customerportal-api"
+  port: 8082
+
+terminalserver:
+  base_url: "https://terminal.event.domain/api"
+  host: "terminalserver-api"
+  port: 8083
+
+# takes about 0.5s to process one purchase - scale to your needs
+bon:
+  n_workers: 1

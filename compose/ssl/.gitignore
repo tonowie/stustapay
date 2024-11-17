@@ -1,0 +1,10 @@
+admin.*
+!admin.san.ext
+
+customer.*
+!customer.san.ext
+
+terminal.*
+!termina.san.ext
+
+ca*
