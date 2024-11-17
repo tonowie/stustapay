@@ -1,0 +1,11 @@
+FROM nginx:1.27-bookworm
+
+COPY compose/nginx/proxy/ /etc/nginx/conf.d/
+COPY compose/ssl/admin.crt compose/ssl/admin.key /etc/nginx/ssl/
+COPY compose/ssl/customer.crt compose/ssl/customer.key /etc/nginx/ssl/
+COPY compose/ssl/terminal.crt compose/ssl/terminal.key /etc/nginx/ssl/
+
+ARG DOMAIN_NAME
+
+# adapt image to domain
+RUN sed -i "s/event\.domain/$(printf '%s' "$DOMAIN_NAME" | sed 's/[&/\]/\\&/g')/g" /etc/nginx/conf.d/*
