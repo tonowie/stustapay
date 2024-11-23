@@ -29,10 +29,12 @@ TODO: define event name, theme and references (web site).
 
 ## Run the system
 
-Change to directory `compose` and run `docker compose up --build`. Applications will start up and you can access web interfaces as follows
+Change to directory `compose` and run `docker compose up --build --scale bon-generator=1`. Applications will start up and you can access web interfaces as follows
 - Customer portal - http://admin.event.domain:8080
 - Administration portal - http://customer.event.domain:8080
 - Terminal server for app - http://terminal.event.domain:8080
+
+Bon generator needs to be scaled to the number of workers configured in `stustapay/config.yaml`.
 
 ### Create admin user
 

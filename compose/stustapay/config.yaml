@@ -25,4 +25,4 @@ terminalserver:
 
 # takes about 0.5s to process one purchase - scale to your needs
 bon:
-  n_workers: 4
+  n_workers: 1

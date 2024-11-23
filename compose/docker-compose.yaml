@@ -45,7 +45,8 @@ services:
     command: /usr/local/bin/stustapay administration-api
     restart: on-failure
     depends_on:
-      - dbupdate
+      dbupdate:
+        condition: service_completed_successfully
 
   customerportal-api:
     build:
@@ -57,7 +58,8 @@ services:
     command: /usr/local/bin/stustapay customerportal-api
     restart: on-failure
     depends_on:
-      - dbupdate
+      dbupdate:
+        condition: service_completed_successfully
 
   terminalserver-api:
     build:
@@ -69,7 +71,21 @@ services:
     command: /usr/local/bin/stustapay terminalserver-api
     restart: on-failure
     depends_on:
-      - dbupdate
+      dbupdate:
+        condition: service_completed_successfully
+
+  bon-generator:
+    build:
+      context: ..
+      dockerfile: compose/Dockerfile.be
+      args:
+        - DOMAIN_NAME=$DOMAIN_NAME
+        - APP_SECRET_TOKEN=$APP_SECRET_TOKEN
+    command: /usr/local/bin/stustapay bon
+    restart: on-failure
+    depends_on:
+      dbupdate:
+        condition: service_completed_successfully
 
   administration-web:
     build:
