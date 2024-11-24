@@ -336,9 +336,9 @@ export const translations = {
       about_page_url: "About page URL",
     },
     agb: {
-      tabLabel: "AGB",
+      tabLabel: "Terms and Conditions",
       preview: "Show Preview",
-      content: "AGB (in markdown formatting)",
+      content: "Terms and Conditions (in markdown formatting)",
     },
     faq: {
       tabLabel: "FAQ",
@@ -346,11 +346,11 @@ export const translations = {
       content: "FAQ (in markdown formatting)",
     },
     bon: {
-      tabLabel: "Bon",
-      issuer: "Bon issuer",
-      address: "Bon address",
-      title: "Bon title",
-      previewBon: "Preview Bon",
+      tabLabel: "Invoices",
+      issuer: "Invoice issuer",
+      address: "Invoice address",
+      title: "Invoice title",
+      previewBon: "Preview Invoice",
       previewReport: "Preview Revenue Report",
     },
     sumup: {
